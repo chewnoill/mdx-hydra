@@ -32,6 +32,7 @@ export const hydrate = ({
   );
   typeof window !== "undefined" &&
     !hydrated.current &&
+    "requestIdleCallback" in window &&
     window.requestIdleCallback(() => {
       const hydratedFn = genReact({ code, components, scope, Wrapper });
 
