@@ -8,6 +8,7 @@ interface Props {
   components?: object;
   remarkPlugins?: Array<any>;
   rehypePlugins?: Array<any>;
+  Wrapper: any;
   source: string;
 }
 

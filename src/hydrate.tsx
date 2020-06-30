@@ -1,5 +1,5 @@
 import React from "react";
-import { genReact } from "./utils";
+import { genReact, defaultWrapper } from "./utils";
 
 interface Props {
   code: string;
@@ -18,6 +18,7 @@ declare global {
 export const hydrate = ({
   code,
   staticMDX,
+  Wrapper = defaultWrapper,
   components = {},
   scope = {},
 }: Props) => {
@@ -32,7 +33,7 @@ export const hydrate = ({
   typeof window !== "undefined" &&
     !hydrated.current &&
     window.requestIdleCallback(() => {
-      const hydratedFn = genReact({ code, components, scope });
+      const hydratedFn = genReact({ code, components, scope, Wrapper });
 
       hydrated.current = true;
       // in order to match the tree shape when we inserted the static version

@@ -1,6 +1,6 @@
 import { transform } from "buble-jsx-only";
 import mdx from "@mdx-js/mdx";
-import { genReact } from "./utils";
+import { genReact, defaultWrapper } from "./utils";
 
 interface Props {
   scope?: object;
@@ -8,6 +8,7 @@ interface Props {
   remarkPlugins?: Array<any>;
   rehypePlugins?: Array<any>;
   source: string;
+  Wrapper?: any;
 }
 
 export const renderMdx = ({
@@ -15,6 +16,7 @@ export const renderMdx = ({
   components = {},
   remarkPlugins = [],
   rehypePlugins = [],
+  Wrapper = defaultWrapper,
   source, // MDX Source
 }: Props) => {
   // Compile MDX source into jsx components
@@ -30,5 +32,5 @@ export const renderMdx = ({
   const code = transform(jsx, {
     objectAssign: "Object.assign",
   }).code;
-  return { code, component: genReact({ code, components, scope }) };
+  return { code, component: genReact({ code, components, scope, Wrapper }) };
 };
