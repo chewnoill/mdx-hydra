@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hydration functionality hydrates components correctly 1`] = `
+<div>
+  <h3
+    class="css-qtqd6f"
+  >
+    This is a test
+  </h3>
+  <p>
+    of the MDX system
+  </p>
+  <button>
+    Counter: 
+    0
+  </button>
+  <div>
+    This is also a test
+  </div>
+</div>
+`;
+
+exports[`hydration functionality hydrates components correctly 2`] = `
+<div>
+  <h3
+    class="css-qtqd6f"
+  >
+    This is a test
+  </h3>
+  <p>
+    of the MDX system
+  </p>
+  <button>
+    Counter: 0
+  </button>
+  <div>
+    This is also a test
+  </div>
+</div>
+`;
+
+exports[`hydration functionality hydrates components correctly 3`] = `
+<div>
+  <h3
+    class="css-qtqd6f"
+  >
+    This is a test
+  </h3>
+  <p>
+    of the MDX system
+  </p>
+  <button>
+    Counter: 1
+  </button>
+  <div>
+    This is also a test
+  </div>
+</div>
+`;
