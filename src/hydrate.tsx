@@ -30,6 +30,16 @@ export const hydrate = ({
       },
     })
   );
+  React.useEffect(() => {
+    setResult(
+      React.createElement("div", {
+        dangerouslySetInnerHTML: {
+          __html: staticMDX,
+        },
+      })
+    );
+    hydrated.current = false;
+  }, [setResult, staticMDX]);
   typeof window !== "undefined" &&
     !hydrated.current &&
     "requestIdleCallback" in window &&

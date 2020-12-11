@@ -69,5 +69,26 @@ of the MDX system
     expect(button.length).toEqual(1);
     button.simulate("click");
     expect(tree.render()).toMatchSnapshot();
+    const ExampleUpdatedMDX = `
+# This is a updated Test!!!
+<T />
+`;
+
+    const updatedString = renderToString({
+      source: ExampleUpdatedMDX,
+      components,
+      Wrapper,
+    });
+    tree.setProps({ ...updatedString, components, Wrapper });
+    expect(tree.render()).toMatchSnapshot();
+    act(() => {
+      requestIdleCallback.runIdleCallbacks();
+      tree.setProps({});
+    });
+    expect(tree.render()).toMatchSnapshot();
+    const updatedbutton = tree.find("button");
+    expect(updatedbutton.length).toEqual(1);
+    updatedbutton.simulate("click");
+    expect(tree.render()).toMatchSnapshot();
   });
 });

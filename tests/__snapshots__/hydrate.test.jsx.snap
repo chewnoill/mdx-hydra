@@ -57,3 +57,43 @@ exports[`hydration functionality hydrates components correctly 3`] = `
   </div>
 </div>
 `;
+
+exports[`hydration functionality hydrates components correctly 4`] = `
+<div>
+  <h3
+    class="css-qtqd6f"
+  >
+    This is a updated Test!!!
+  </h3>
+  <button>
+    Counter: 
+    0
+  </button>
+</div>
+`;
+
+exports[`hydration functionality hydrates components correctly 5`] = `
+<div>
+  <h3
+    class="css-qtqd6f"
+  >
+    This is a updated Test!!!
+  </h3>
+  <button>
+    Counter: 0
+  </button>
+</div>
+`;
+
+exports[`hydration functionality hydrates components correctly 6`] = `
+<div>
+  <h3
+    class="css-qtqd6f"
+  >
+    This is a updated Test!!!
+  </h3>
+  <button>
+    Counter: 1
+  </button>
+</div>
+`;
